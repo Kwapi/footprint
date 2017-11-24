@@ -18,3 +18,5 @@ $router->get('/', function () use ($router) {
 
 
 $router->post('/fullcontact/email/','FullContactController@getInfoFromEmail');
+$router->get('/instagram/username/{username}','InstagramController@getInfoFromUsername');
+$router->get('/facebook/id/{id}','FacebookController@getInfoFromID');

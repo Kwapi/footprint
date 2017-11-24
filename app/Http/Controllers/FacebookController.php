@@ -8,26 +8,24 @@ use Illuminate\Http\Request;
 
 class FacebookController extends BaseController
 {
-    public function getInfoForMe(){
+    public function getInfoFromID($id){
 
+
+        $default_access_token = env('FB_APP_ID').'|'.env('FB_APP_SECRET');
 
         $fb = new \Facebook\Facebook([
-            'app_id' => '{app-id}',
-            'app_secret' => '{app-secret}',
+            'app_id' => env('FB_APP_ID'),
+            'app_secret' => env('FB_APP_SECRET'),
             'default_graph_version' => 'v2.10',
-            //'default_access_token' => '{access-token}', // optional
+            'default_access_token' => $default_access_token
         ]);
 
-// Use one of the helper classes to get a Facebook\Authentication\AccessToken entity.
-//   $helper = $fb->getRedirectLoginHelper();
-//   $helper = $fb->getJavaScriptHelper();
-//   $helper = $fb->getCanvasHelper();
-//   $helper = $fb->getPageTabHelper();
+        echo $default_access_token;
 
         try {
             // Get the \Facebook\GraphNodes\GraphUser object for the current user.
             // If you provided a 'default_access_token', the '{access-token}' is optional.
-            $response = $fb->get('/me', '{access-token}');
+            $response = $fb->get('/'.$id.'/feed');
         } catch(\Facebook\Exceptions\FacebookResponseException $e) {
             // When Graph returns an error
             echo 'Graph returned an error: ' . $e->getMessage();
@@ -38,8 +36,11 @@ class FacebookController extends BaseController
             exit;
         }
 
-        $me = $response->getGraphUser();
-        echo 'Logged in as ' . $me->getName();
+
+        echo var_dump($response->getGraphNode());
+
+//        echo $user->getEmail();
+//        echo 'Logged in as ' . $user->getName();
 
     }
 }
