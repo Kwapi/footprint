@@ -15,25 +15,61 @@ class ResultsController extends Controller
     }
 
     public function showResults() {
+        $iconPath = '/build/img/icons/';
         $networks = [];
 
         $facebook = [
-            'icon' => '',
+            'icon' => $iconPath . 'facebook.svg',
             'url' => '',
             'name' => 'Facebook',
             'created_date' => '30th March',
-            'img' => '/build/img/img.jpeg'
+            'img' => '/build/img/img.jpeg',
+            'results' => 9000
         ];
         $networks[] = $facebook;
 
         $twitter = [
-            'icon' => '',
+            'icon' => $iconPath . 'twitter.svg',
             'url' => '',
             'name' => 'Twitter',
             'created_date' => '30th March',
-            'img' => '/build/img/img.jpeg'
+            'img' => '/build/img/img.jpeg',
+            'results' => 9000
         ];
+        $networks[] = $twitter;
 
-        return view('results', $networks);
+        $linkedin = [
+            'icon' => $iconPath . 'linkedin.svg',
+            'url' => '',
+            'name' => 'LinkedIn',
+            'created_date' => '30th March',
+            'img' => '/build/img/img.jpeg',
+            'results' => 9000
+        ];
+        $networks[] = $linkedin;
+
+        $instagram = [
+            'icon' => $iconPath . 'instagram.svg',
+            'url' => '',
+            'name' => 'Instagram',
+            'created_date' => '30th March',
+            'img' => '/build/img/img.jpeg',
+            'results' => 9000
+        ];
+        $networks[] = $instagram;
+
+        $soundcloud = [
+            'icon' => $iconPath . 'soundcloud.svg',
+            'url' => '',
+            'name' => 'SoundCloud',
+            'created_date' => '30th March',
+            'img' => '/build/img/img.jpeg',
+            'results' => 9000
+        ];
+        $networks[] = $soundcloud;
+
+        return view('results', [
+            'networks' => $networks
+        ]);
     }
 }
