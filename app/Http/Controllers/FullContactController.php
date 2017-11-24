@@ -29,14 +29,19 @@ class FullContactController extends BaseController
 
             $information = curl_exec($ch);
             curl_close($ch);
-            $json = json_encode($information);
+
+            $json = json_decode($information);
+
+            if($json->status == 200){
+                Storage::disk('local')->put($json_file_name, $information);
+
+            }
 
 
-            Storage::disk('local')->put($json_file_name, $information);
 
             echo 'Retrieved';
 
-            echo $json;
+            echo $information;
         }else{
             echo 'Loaded ';
             echo Storage::disk('local')->get($json_file_name);
