@@ -5,10 +5,10 @@
 <section class="flex flex-wrap" style="padding-top: 64px;">
 @foreach($networks as $network)
     <div class="w-1/4 p-4">
-    <a class="inline-block no-underline text-grey" href="{{ $network['url'] }}">
+    <a class="inline-block no-underline text-grey w-full" href="{{ $network['url'] }}">
         <div class="shadow-lg rounded">
-            <div>
-                <img class="rounded-t" src="{{ $network['img'] }}" alt="">
+            <div class="h-48 bg-cover" style="background-image: url('{{ $network['img'] }}');">
+                
             </div>
             <div class="p-4 card__body">
                 <img class="w-6 mr-2" src="{{ $network['icon'] }}" alt="">
