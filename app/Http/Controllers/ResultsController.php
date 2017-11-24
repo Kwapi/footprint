@@ -23,7 +23,7 @@ class ResultsController extends Controller
             'icon' => $iconPath . 'facebook.svg',
             'url' => 'https://www.facebook.com/kirstyjarvis',
             'name' => 'Facebook',
-            'created_date' => 'October 31, 16',
+            'created_date' => '31st Oct 16',
             'img' => $bannerPath . 'facebook.jpg',
             'results' => 9000
         ];
@@ -33,7 +33,7 @@ class ResultsController extends Controller
             'icon' => $iconPath . 'twitter.svg',
             'url' => 'https://twitter.com/KVCJarvis',
             'name' => 'Twitter',
-            'created_date' => '30th March',
+            'created_date' => '24th Nov 17',
             'img' => $bannerPath . 'twitter.jpg',
             'results' => 9000
         ];
