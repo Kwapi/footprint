@@ -15,8 +15,10 @@ $router->get('/', function () use ($router) {
     return view('email_form');
 });
 
+$router->get('/results', function () use ($router) {
+    return view('results');
+});
 
 
-$router->post('/fullcontact/email/','FullContactController@getInfoFromEmail');
-$router->get('/instagram/username/{username}','InstagramController@getInfoFromUsername');
+$router->post('/fullcontact/email/','FullContactController@getInfoFromEmail');$router->get('/instagram/username/{username}','InstagramController@getInfoFromUsername');
 $router->get('/facebook/id/{id}','FacebookController@getInfoFromID');
