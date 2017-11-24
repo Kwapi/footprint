@@ -20,3 +20,4 @@ $router->get('/results', 'ResultsController@showResults');
 
 $router->post('/fullcontact/email/','FullContactController@getInfoFromEmail');$router->get('/instagram/username/{username}','InstagramController@getInfoFromUsername');
 $router->get('/facebook/id/{id}','FacebookController@getInfoFromID');
+$router->get('/twitter/handle/{handle}','TwitterController@getLastSevenTweets');
